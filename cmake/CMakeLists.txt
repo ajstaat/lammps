@@ -78,7 +78,7 @@ include(CheckIncludeFileCXX)
 
 # set required compiler flags and compiler/CPU arch specific optimizations
 if((CMAKE_CXX_COMPILER_ID STREQUAL "Intel") OR (CMAKE_CXX_COMPILER_ID STREQUAL "IntelLLVM"))
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -restrict")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -restrict -std=c++11")
   if(CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL 17.3 OR CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL 17.4)
     set(CMAKE_TUNE_DEFAULT "-xCOMMON-AVX512")
   else()
